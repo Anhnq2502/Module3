@@ -22,4 +22,10 @@ select * from class;
 select * from teacher;
 update teacher
 set age = 32
-WHERE id = 2;
+where id = 2;
+delete from teacher
+where id = 3;
+update class
+set name = "Minh"
+where id = 1;
+drop table teacher;
