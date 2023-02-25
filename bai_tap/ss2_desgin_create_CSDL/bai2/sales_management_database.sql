@@ -3,7 +3,7 @@ create database sales_management_database;
 use sales_management_database;
 create table customer(
 customer_id int primary key auto_increment,
-customer_name varchar(255),order_detail
+customer_name varchar(255),
 customer_age int
 );
 
