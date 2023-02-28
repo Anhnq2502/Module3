@@ -62,24 +62,49 @@ call infor_product();
 
 -- Tạo store procedure thêm một sản phẩm mới
 Delimiter $$
-create procedure add_product()
+create procedure add_product(
+	id1 int,
+    product_code1 int,
+    product_name1 varchar(255),
+    product_price1 float,
+    product_amount1 int,
+    product_description1 text,
+    product_status1 bit)
 begin
-insert into products(id, product_code, product_name, product_price, product_amount, product_description, product_status)
-value(6,6,'PC',1800,10,'Máy đẹp, chạy êm, mỏng nhẹ, chơi game mượt', 1);
+insert into product(id, product_code, product_name, product_price, product_amount, product_description, product_statu)
+value(id = id1,
+product_code = product_code1,
+product_name = product_name1,
+product_price = product_price1,
+product_amount = product_amount1,
+product_description = product_description1,
+product_status = product_status1);
 end $$
 Delimiter ;
-call add_product();
 
 -- Tạo store procedure sửa thông tin sản phẩm theo id
 Delimiter $$
-create procedure update_product(in a int)
+create procedure update_product(in a int,
+	id1 int,
+    product_code1 int,
+    product_name1 varchar(255),
+    product_price1 float,
+    product_amount1 int,
+    product_description1 text,
+    product_status1 bit)
 begin
 update products
-set product_price = 0
+set id = id1,
+product_code = product_code1,
+product_name = product_name1,
+product_price = product_price1,
+product_amount = product_amount1,
+product_description = product_description1,
+product_status = product_status1
 where id = a ;
 end $$
 Delimiter ;
-call update_product(3);
+call update_product(3,7,7,'a',2,3,'abc',0);
 
 -- Tạo store procedure xoá sản phẩm theo id
 Delimiter $$

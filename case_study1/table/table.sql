@@ -1,6 +1,6 @@
 create database furama_database;
 use furama_database;
-drop database furama_database;
+
 create table vi_tri(
 	ma_vi_tri int,
     ten_vi_tri varchar(255),
@@ -72,7 +72,7 @@ create table loai_khach(
     primary key(ma_loai_khach)
 );
 insert into loai_khach(ma_loai_khach, ten_loai_khach)
-value(1,'Dinamond'),
+value(1,'Diamond'),
 (2,'Platinium'),
 (3,'Gold'),
 (4,'Silver'),
@@ -217,3 +217,4 @@ value(1,5,2,4),
 (6,1,1,3),
 (7,2,1,2),
 (8,2,12,2);
+
