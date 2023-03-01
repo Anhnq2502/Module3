@@ -105,7 +105,7 @@ group by hd.ma_hop_dong;
 
 -- Câu 13: Hiển thị thông tin các Dịch vụ đi kèm được sử dụng nhiều nhất bởi các Khách hàng đã đặt phòng. (Lưu ý là có thể có nhiều dịch vụ có số lần sử dụng nhiều như nhau).
 create or replace view  so_lan_su_dung
-as  select dvdk.ten_dich_vu_di_kem, dvdk.ma_dich_vu_di_kem,sum(hdct.so_luong) as so_lan_su_dung
+as  select dvdk.ten_dich_vu_di_kem, dvdk.ma_dich_vu_di_kem,sum(hdct.so_luong) as so_luong
 from hop_dong_chi_tiet as hdct
 inner join dich_vu_di_kem as dvdk on dvdk.ma_dich_vu_di_kem=hdct.ma_dich_vu_di_kem
 group by dvdk.ma_dich_vu_di_kem;
