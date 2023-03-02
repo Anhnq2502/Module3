@@ -1,6 +1,6 @@
 create database furama_database;
 use furama_database;
-
+-- drop database furama_database;
 create table vi_tri(
 	ma_vi_tri int,
     ten_vi_tri varchar(255),

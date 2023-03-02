@@ -17,11 +17,36 @@ from khach_hang
 where ((timestampdiff(year,ngay_sinh,now())) between 18 and 50) and (dia_chi like '%Đà Nẵng' or dia_chi like '%Quảng Trị');
 
 -- Câu 4:
-select kh.ma_khach_hang, kh.ho_ten, ten_loai_khach, count(kh.ma_khach_hang) as so_lan_dat_phong
+select kh.ma_khach_hang, kh.ho_ten, lk.ten_loai_khach, count(kh.ma_khach_hang) as so_lan_dat_phong
 from khach_hang as kh
 inner join loai_khach as lk on lk.ma_loai_khach = kh.ma_loai_khach
 inner join hop_dong as hd on hd.ma_khach_hang = kh.ma_khach_hang
 where ten_loai_khach = 'Diamond'
+group by kh.ma_khach_hang
+order by so_lan_dat_phong asc;
+
+
+select kh.ma_khach_hang, kh.ho_ten, count(hd.ma_khach_hang) as so_lan_dat_phong
+from khach_hang as kh, hop_dong as hd
+where kh.ma_loai_khach = 1 and kh.ma_khach_hang in(select ma_khach_hang 
+from hop_dong as hd
+group by hd.ma_khach_hang)
+group by kh.ma_khach_hang;
+
+
+
+select ma_khach_hang
+from hop_dong
+group by ma_khach_hang;
+
+
+
+
+select kh.ma_khach_hang, kh.ho_ten, lk.ten_loai_khach, count(kh.ma_khach_hang) as so_lan_dat_phong
+from khach_hang as kh
+inner join loai_khach as lk on lk.ma_loai_khach = kh.ma_loai_khach
+inner join hop_dong as hd on hd.ma_khach_hang = kh.ma_khach_hang
+where ten_loai_khach in ( select ten_loai_khach from loai_khach where ten_loai_khach = 'Diamond')
 group by kh.ma_khach_hang
 order by so_lan_dat_phong asc;
 
@@ -63,10 +88,9 @@ select ho_ten
 from khach_hang
 group by ho_ten;
 -- Cách 3:
-select ho_ten
-from khach_hang
-group by ho_ten
-having count(ho_ten) <=2;
+select ho_ten from khach_hang
+union
+select ho_ten from khach_hang;
 
 -- Câu 9: Thực hiện thống kê doanh thu theo tháng, nghĩa là tương ứng với mỗi tháng trong năm 2021 thì sẽ có bao nhiêu khách hàng thực hiện đặt phòng.
 select month(ngay_lam_hop_dong) as thang, count(month(ngay_lam_hop_dong)) as so_luong_khach_hang 
@@ -144,12 +168,11 @@ select * from nhan_vien1;
 delete
 from ma_nhan_vien 
 where ma_nhan_vien not in (
-select ma_nhan_vien 
-from hop_dong as hd 
+select hd.ma_nhan_vien
+from hop_dong as hd
 where year(hd.ngay_lam_hop_dong) between 2019 and 2021
 group by ma_nhan_vien
 );
-
 
 -- Câu 17: Cập nhật thông tin những khách hàng có ten_loai_khach từ Platinum lên Diamond, chỉ cập nhật những khách hàng đã từng đặt phòng với Tổng Tiền thanh toán trong năm 2021 là lớn hơn 10.000.000 VNĐ.
 create view khach_hang1
@@ -167,26 +190,41 @@ set ma_loai_khach = 1
 where ma_khach_hang in (select ma_khach_hang from khach_hang1);
 
 -- Câu 18: Xóa những khách hàng có hợp đồng trước năm 2021 (chú ý ràng buộc giữa các bảng).
-create view khach_hang_2020
-as
-select kh.ma_khach_hang, kh.ho_ten
-from khach_hang as kh
-inner join hop_dong as hd on hd.ma_khach_hang = kh.ma_khach_hang
-where year(hd.ngay_lam_hop_dong) < 2021 and year(hd.ngay_ket_thuc) < 2021
-group by kh.ma_khach_hang;
-select * from khach_hang_2020;
 
-create view full_khach_hang
-as
-select *
-from khach_hang;
+create or replace view ma_ao as
+select hd.ma_hop_dong, kh.ma_khach_hang, kh.ho_ten
+from hop_dong as hd
+inner join khach_hang as kh on kh.ma_khach_hang = hd.ma_khach_hang
+where year(ngay_lam_hop_dong) < 2021 and year(ngay_lam_hop_dong) < 2021;
+
+create or replace view bang_ao as
+select hd.ma_hop_dong, kh.ma_khach_hang, kh.ho_ten
+from hop_dong as hd
+inner join khach_hang as kh on kh.ma_khach_hang = hd.ma_khach_hang
+where kh.ma_khach_hang in ( select ma_khach_hang from ma_ao);
+
 delete
-from full_khach_hang
-where full_khach_hang.ho_ten in (
-select ho_ten
-from khach_hang_2020
-);
+from hop_dong_chi_tiet as hdct
+where ma_hop_dong in(select temp.ma_hop_dong
+from (
+select ma_hop_dong
+from ma_ao) as temp);
 
+delete
+from hop_dong 
+where hop_dong.ma_khach_hang in(select temp.ma_khach_hang from (
+select ma_khach_hang
+from ma_ao) as temp);
+
+
+
+
+delete
+from khach_hang
+where khach_hang.ma_khach_hang  in ( select temp.ma_khach_hang from (
+select ma_khach_hang
+from ma_ao
+)as temp);
 -- Câu 19: Cập nhật giá cho các dịch vụ đi kèm được sử dụng trên 10 lần trong năm 2020 lên gấp đôi
 create or replace view gia_nhan_doi as
 select dvdk.ma_dich_vu_di_kem, dvdk.ten_dich_vu_di_kem, dvdk.gia * 2 as gia_sau_khi_tang from hop_dong as hd 
@@ -200,9 +238,11 @@ set gia = gia * 2
 where ma_dich_vu_di_kem in (select ma_dich_vu_di_kem from gia_nhan_doi);
 
 -- Câu 20: Hiển thị thông tin của tất cả các nhân viên và khách hàng có trong hệ thống, thông tin hiển thị bao gồm id (ma_nhan_vien, ma_khach_hang), ho_ten, email, so_dien_thoai, ngay_sinh, dia_chi
-create view nhan_vien_khach_hang 
+create or replace view nhan_vien_khach_hang 
 as 
-select nv.ma_nhan_vien, nv.ho_ten, nv.email, nv.so_dien_thoai, nv.ngay_sinh, nv.dia_chi from nhan_vien as nv 
+select nv.ma_nhan_vien, nv.ho_ten, nv.email, nv.so_dien_thoai, nv.ngay_sinh, nv.dia_chi
+from nhan_vien as nv 
 union all
-select nv.ma_nhan_vien, nv.ho_ten, nv.email, nv.so_dien_thoai, nv.ngay_sinh, nv.dia_chi from nhan_vien as nv;
+select kh.ma_khach_hang, kh.ho_ten, kh.email, kh.so_dien_thoai, kh.ngay_sinh, kh.dia_chi
+from khach_hang as kh;
 select * from nhan_vien_khach_hang;
