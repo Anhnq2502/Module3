@@ -1,0 +1,49 @@
+.container > div {
+    padding: 20px;
+    font-size: 20px;
+}
+.container {
+    display: grid;
+    grid-template-columns: 20% 60% 20%;
+    margin: 0;
+    padding: 0;
+}
+.Header {
+    grid-column-start: 1;
+    grid-column-end: 4;
+    text-align: left;
+    background: black;
+    color: dimgrey;
+}
+.content {
+    text-align: left;
+}
+.menuLeft {
+    text-align: center;
+    background: antiquewhite;
+    height: 565px;
+}
+.menuRight {
+    text-align: center;
+    background: antiquewhite;
+}
+.footer {
+    text-align: center;
+    grid-column-start: 1;
+    grid-column-end: 4;
+    background: dimgrey;
+}
+.Header {
+    display: grid;
+    grid-template-areas: 'a b c d e e e e e e e e e f'  ;
+}
+.logo {grid-area: a}
+.home {grid-area: b}
+.about {grid-area: c}
+.project {grid-area: d}
+.contact {grid-area: e}
+.login {grid-area: f}
+
+a{
+    text-decoration: none;
+}

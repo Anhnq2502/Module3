@@ -1,0 +1,75 @@
+.container {
+    padding: 20px;
+    border: 5px;
+    background: aqua;
+}
+.Header1 {
+    margin-bottom: 2px;
+}
+
+.item1 {
+    grid-area: a
+}
+
+.item2 {
+    grid-area: b
+}
+
+.item3 {
+    grid-area: c
+}
+
+.item4 {
+    grid-area: d
+}
+
+.body {
+    display: grid;
+    font-size: 20px;
+    text-align: left;
+    grid-template-columns: 35% 65%;
+}
+
+.menuLeft {
+    text-align: center;
+    background: aqua;
+    padding-right: 5px;
+}
+
+.content {
+    text-align: center;
+    padding: 2%;
+    background: azure;
+}
+
+table {
+    font-size: 30px;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.video1 {
+    padding-top: 10px;
+    margin: 0 auto;
+    background: azure;
+}
+.video2{
+    padding-top: 10px;
+    margin: 0 auto;
+    background: azure;
+}
+.video3{
+    padding-top: 10px;
+    margin: 0 auto;
+    background: azure;
+}
+.video4{
+    padding-top: 10px;
+    margin: 0 auto;
+    background: azure;
+}
+p{
+    text-align: left;
+    padding-left: 5%;
+    padding-bottom: 5%;
+}
