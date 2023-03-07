@@ -1,0 +1,68 @@
+
+body {
+    font-size: 13px;
+}
+
+.surface {
+    border-left: 2px solid black;
+}
+
+.animation-row {
+    background-color: #DCDBDB;
+}
+
+.animation {
+    height: 20px;
+    line-height: 20px;
+}
+
+.main1-part1 {
+    background-color: #E5EBF5;
+    height: 700px;
+    padding-left: 100px;
+}
+
+.title-laptopsdesigned {
+    font-size: 5.5rem;
+}
+
+.paragraph1 {
+    font-size: 26px;
+}
+
+.link-part1 {
+    text-decoration: none;
+    color: black;
+    margin-right: 20px;
+}
+
+.gallery1 {
+    border: 1px solid black;
+    margin-top: 50px;
+    width: 95%;
+}
+
+.content-gallery {
+    font-size: 30px;
+}
+
+.buy-now {
+    color: #0F13AA;
+}
+
+.surface-panel {
+    display: inherit;
+}
+
+.hotel, hat, device, .help-choose, tag, why-surface {
+    width: 14%;
+}
+
+.link-2in1 {
+    text-decoration: none;
+}
+
+.link-card {
+    text-decoration: none;
+    color: #3B3FDC;
+}
