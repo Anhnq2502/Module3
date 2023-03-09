@@ -16,11 +16,6 @@
       <change afterPath="$PROJECT_DIR$/Module_3/src/ss8_bootstrap/bai1/css_bai1.css" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/Module_3/src/ss8_bootstrap/bai2/bai2.html" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/Module_3/src/ss8_bootstrap/bai2/css_bai2.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ss9_/css.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ss9_/js.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Module_3" beforeDir="false" afterPath="$PROJECT_DIR$/Module_3" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Module_3/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Module_3/.idea/modules.xml" afterDir="false" />
@@ -30,7 +25,8 @@
       <change beforePath="$PROJECT_DIR$/Module_3/src/ss7_css_layout/layout_with_rwd/css_bai1.css" beforeDir="false" afterPath="$PROJECT_DIR$/Module_3/src/ss7_css_layout/layout_with_rwd/css_bai1.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Module_3/src/ss7_css_layout/website_development/bai2.html" beforeDir="false" afterPath="$PROJECT_DIR$/Module_3/src/ss7_css_layout/website_development/bai2.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Module_3/src/ss7_css_layout/website_development/css_bai2.css" beforeDir="false" afterPath="$PROJECT_DIR$/Module_3/src/ss7_css_layout/website_development/css_bai2.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bai_tap.iml" beforeDir="false" afterPath="$PROJECT_DIR$/bai_tap.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ss7_css_layout/website_development/bai2.html" beforeDir="false" afterPath="$PROJECT_DIR$/ss7_css_layout/website_development/bai2.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ss7_css_layout/website_development/css_bai2.css" beforeDir="false" afterPath="$PROJECT_DIR$/ss7_css_layout/website_development/css_bai2.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,7 +44,7 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/Module_3" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
