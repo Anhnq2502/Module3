@@ -1,6 +1,11 @@
 <component name="InspectionProjectProfileManager">
   <profile version="1.0">
     <option name="myName" value="Project Default" />
+    <inspection_tool class="DuplicatedCode" enabled="true" level="WEAK WARNING" enabled_by_default="true">
+      <Languages>
+        <language minSize="27" name="Style Sheets" />
+      </Languages>
+    </inspection_tool>
     <inspection_tool class="HtmlUnknownAttribute" enabled="true" level="WARNING" enabled_by_default="true">
       <option name="myValues">
         <value>
@@ -14,7 +19,7 @@
     <inspection_tool class="HtmlUnknownTag" enabled="true" level="WARNING" enabled_by_default="true">
       <option name="myValues">
         <value>
-          <list size="15">
+          <list size="23">
             <item index="0" class="java.lang.String" itemvalue="nobr" />
             <item index="1" class="java.lang.String" itemvalue="noembed" />
             <item index="2" class="java.lang.String" itemvalue="comment" />
@@ -30,6 +35,14 @@
             <item index="12" class="java.lang.String" itemvalue="tag" />
             <item index="13" class="java.lang.String" itemvalue="why-surface" />
             <item index="14" class="java.lang.String" itemvalue="input" />
+            <item index="15" class="java.lang.String" itemvalue="to-mobile" />
+            <item index="16" class="java.lang.String" itemvalue="col-line" />
+            <item index="17" class="java.lang.String" itemvalue="col-lttr" />
+            <item index="18" class="java.lang.String" itemvalue="col-bg" />
+            <item index="19" class="java.lang.String" itemvalue="px" />
+            <item index="20" class="java.lang.String" itemvalue="ffc568" />
+            <item index="21" class="java.lang.String" itemvalue="ffffff" />
+            <item index="22" class="java.lang.String" itemvalue="c8c" />
           </list>
         </value>
       </option>

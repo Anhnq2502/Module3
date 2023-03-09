@@ -5,10 +5,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a5468a65-364d-40f6-9c6a-46cc5ede7153" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Module_3/src/css.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Module_3/src/demo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Module_3/src/demo1.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Module_3/src/demo5.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Module_3/src/iloveyou.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Module_3/src/js.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Module_3/src/scss.scss" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/Module_3/src/ss8_bootstrap/bai1/bai1.html" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/Module_3/src/ss8_bootstrap/bai1/css_bai1.css" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/Module_3/src/ss8_bootstrap/bai2/bai2.html" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/Module_3/src/ss8_bootstrap/bai2/css_bai2.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ss9_/css.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ss9_/js.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Module_3" beforeDir="false" afterPath="$PROJECT_DIR$/Module_3" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Module_3/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Module_3/.idea/modules.xml" afterDir="false" />
@@ -18,7 +30,7 @@
       <change beforePath="$PROJECT_DIR$/Module_3/src/ss7_css_layout/layout_with_rwd/css_bai1.css" beforeDir="false" afterPath="$PROJECT_DIR$/Module_3/src/ss7_css_layout/layout_with_rwd/css_bai1.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Module_3/src/ss7_css_layout/website_development/bai2.html" beforeDir="false" afterPath="$PROJECT_DIR$/Module_3/src/ss7_css_layout/website_development/bai2.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Module_3/src/ss7_css_layout/website_development/css_bai2.css" beforeDir="false" afterPath="$PROJECT_DIR$/Module_3/src/ss7_css_layout/website_development/css_bai2.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ss8_bootstrap/bai2/css_bai2.css" beforeDir="false" afterPath="$PROJECT_DIR$/ss8_bootstrap/bai2/css_bai2.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bai_tap.iml" beforeDir="false" afterPath="$PROJECT_DIR$/bai_tap.iml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,13 +40,15 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="CSS File" />
+        <option value="Class" />
         <option value="HTML File" />
+        <option value="CSS File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/Module_3" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -61,6 +75,20 @@
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
+  <component name="RunManager">
+    <configuration name="demo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="demo" />
+      <module name="bai_tap" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.demo" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -74,11 +102,32 @@
       <workItem from="1678103575793" duration="571000" />
       <workItem from="1678157444720" duration="10721000" />
       <workItem from="1678188561214" duration="2629000" />
-      <workItem from="1678246020892" duration="132000" />
+      <workItem from="1678246020892" duration="864000" />
+      <workItem from="1678250736334" duration="92000" />
+      <workItem from="1678252826051" duration="4958000" />
+      <workItem from="1678278939147" duration="2590000" />
+      <workItem from="1678281662428" duration="504000" />
+      <workItem from="1678282241001" duration="838000" />
+      <workItem from="1678331183321" duration="3000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/Module_3/src/demo.java</url>
+          <line>3</line>
+          <properties class="demo" method="main">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
