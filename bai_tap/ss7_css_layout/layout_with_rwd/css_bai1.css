@@ -18,12 +18,12 @@
 .content {
     text-align: left;
 }
-.menuLeft {
+.menu_left {
     text-align: center;
     background: antiquewhite;
     height: 565px;
 }
-.menuRight {
+.menu_right {
     text-align: center;
     background: antiquewhite;
 }
