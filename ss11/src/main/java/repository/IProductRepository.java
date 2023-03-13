@@ -10,14 +10,8 @@ public interface IProductRepository {
     List<Product> findAll();
 
     void save(Product product);
-
     Product findById(int productId);
-
     void update(int productId, Product product);
-
-    void delete(int productId);
-
-    Product display(int productId);
-
-    void search(int productId);
+    void remove(int productId);
+    Product findByName(String productName);
 }

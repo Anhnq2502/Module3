@@ -24,7 +24,7 @@ public class ProductRepositoryImpl implements IProductRepository {
 
     @Override
     public void save(Product product) {
-        productList.add(product);
+        productList.add(product.getProductId(),product);
     }
 
     @Override
@@ -32,24 +32,18 @@ public class ProductRepositoryImpl implements IProductRepository {
         return productList.get(productId);
     }
 
-
     @Override
     public void update(int productId, Product product) {
-        productList.add(productId, product);
+        productList.add(productId,product);
     }
 
     @Override
-    public void delete(int productId) {
+    public void remove(int productId) {
         productList.remove(productId);
     }
 
     @Override
-    public Product display(int productId) {
-        return null;
-    }
-
-    @Override
-    public void search(int productId) {
-
+    public Product findByName(String productName) {
+        return productList.get(Integer.parseInt(productName));
     }
 }

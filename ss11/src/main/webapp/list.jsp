@@ -42,7 +42,7 @@
         </tr>
     </thread>
     <tbody>
-    <c:forEach items="${productList}" var="product">
+    <c:forEach items="${product}" var="product">
         <tr>
             <td>${product.productId}</td>
             <td>${product.productName}</td>

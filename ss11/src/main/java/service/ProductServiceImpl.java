@@ -4,11 +4,12 @@ import model.Product;
 import repository.IProductRepository;
 import repository.ProductRepositoryImpl;
 
-import java.util.ArrayList;
+
 import java.util.List;
 
 public class ProductServiceImpl implements IProductService {
     private IProductRepository repository = new ProductRepositoryImpl();
+
 
     @Override
     public List<Product> findAll() {
@@ -17,7 +18,7 @@ public class ProductServiceImpl implements IProductService {
 
     @Override
     public void save(Product product) {
-        repository.save(product);
+
     }
 
     @Override
@@ -27,22 +28,17 @@ public class ProductServiceImpl implements IProductService {
 
     @Override
     public void update(int productId, Product product) {
-        repository.update(productId, product);
+        repository.update(productId,product);
     }
 
     @Override
-    public void delete(int productId) {
-        repository.delete(productId);
+    public void remove(int productId) {
+        repository.remove(productId);
     }
 
     @Override
-    public Product display(int productId) {
-        return null;
+    public Product findByName(String productName) {
+        return repository.findByName(productName);
     }
-
-    @Override
-    public void search(int productId) {
-
-    }
-
 }
+

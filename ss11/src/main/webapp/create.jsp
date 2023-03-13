@@ -1,41 +1,50 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: Admin
-  Date: 13/03/2023
-  Time: 10:54 SA
-  To change this template use File | Settings | File Templates.
---%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Create</title>
+  <title>Create new product</title>
+  <style>
+    .message{
+      color:green;
+    }
+  </style>
 </head>
 <body>
-<div class="container">
-
-    <div class="row justify-content-center mt-4"></div>
-  <form class="col-md6" action="/product" method="post"></form>
-  <h1>Create Product</h1>
-  <div class="form-group">
-    <label for="txtID">Product ID</label>
-    <input type="text" class="form-control" name="ProductId" id="txtID">
-  </div>
-  <div class="form-group">
-    <label for="txtName">Product Name</label>
-    <input type="text" class="form-control" name="ProductName" id="txtName">
-  </div>
-  <div class="form-group">
-    <label for="txtPrice">Product Price</label>
-    <input type="text" class="form-control" name="ProductPrice" id="txtPrice">
-  </div>
-  <div class="form-group">
-    <label for="txtImage">Product Image</label>
-    <input type="text" class="form-control" name="ProductImage" id="txtImage">
-  </div>
-  <div class="form-group mt-2">
-    <button class="btn btn-success" role="button" type="submit">Create</button>
-    <button class="btn btn-warning" role="button">Cancel</button>
-  </div>
-</div>
+<h1>Create new product</h1>
+<p>
+  <c:if test='${requestScope["message"] != null}'>
+    <span class="message">${requestScope["message"]}</span>
+  </c:if>
+</p>
+<p>
+  <a href="/product">Back to product list</a>
+</p>
+<form method="post">
+  <fieldset>
+    <legend>product information</legend>
+    <table>
+      <tr>
+        <td>Id: </td>
+        <td><input type="text" name="productId" id="Id"></td>
+      </tr>
+      <tr>
+        <td>Name: </td>
+        <td><input type="text" name="productName" id="Name"></td>
+      </tr>
+      <tr>
+        <td>Price: </td>
+        <td><input type="text" name="productPrice" id="Price"></td>
+      </tr>
+      <tr>
+        <td>Image: </td>
+        <td><input type="text" name="productImg" id="Image"></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td><input type="submit" value="Create customer"></td>
+      </tr>
+    </table>
+  </fieldset>
+</form>
 </body>
 </html>
