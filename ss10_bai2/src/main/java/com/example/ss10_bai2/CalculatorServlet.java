@@ -14,30 +14,36 @@ public class CalculatorServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-            Double firstNum = Double.valueOf(request.getParameter("firstNumber"));
-            Double secondNum = Double.valueOf(request.getParameter("secondNumber"));
-            String operator = request.getParameter("operator");
-            Double result = 0.0;
+        Double firstNum = Double.valueOf(request.getParameter("firstNumber"));
+        Double secondNum = Double.valueOf(request.getParameter("secondNumber"));
+        String operator = request.getParameter("operator");
+        Double result = 0.0;
         System.out.println("2");
         switch (operator) {
             case "+":
                 result = firstNum + secondNum;
+                request.setAttribute("result", result);
                 break;
             case "-":
                 result = firstNum - secondNum;
+                request.setAttribute("result", result);
                 break;
             case "*":
                 result = firstNum * secondNum;
+                request.setAttribute("result", result);
                 break;
             case "/":
-                result = firstNum / secondNum;
+                if(secondNum == 0){
+                    request.setAttribute("result", "Không thể chia cho 0");
+                }else {
+                    result = firstNum / secondNum;
+                }
                 break;
         }
         System.out.println(result);
-            request.setAttribute("result", result);
-            request.setAttribute("first",firstNum);
-            request.setAttribute("second",secondNum);
-            request.setAttribute("operator",operator);
-            request.getRequestDispatcher("result.jsp").forward(request,response);
+        request.setAttribute("first", firstNum);
+        request.setAttribute("second", secondNum);
+        request.setAttribute("operator", operator);
+        request.getRequestDispatcher("result.jsp").forward(request, response);
     }
 }
