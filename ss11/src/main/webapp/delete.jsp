@@ -13,32 +13,32 @@
 <body>
 <h1>Delete product</h1>
 <p>
-  <a href="/product">Back to product list</a>
+    <a href="/product">Back to product list</a>
 </p>
 <form method="post">
-<h3>Are you sure</h3>
-<fieldset>
-  <legend>
-    Product Information
-  </legend>
-  <table>
-    <tr>
-      <td>ProductName:</td>
-      <td>${product.productName}</td>
-    </tr>
-    <tr>
-      <td>ProductPrice:</td>
-      <td>${product.productPrice}</td>
-    </tr>
-    <tr>
-      <td>ProductImg:</td>
-      <td>${product.productImg}</td>
-    </tr>
-    <tr>
-      <td><input type="submit" value="Delete product"></td>
-    </tr>
-  </table>
-</fieldset>
+    <h3>Are you sure</h3>
+    <fieldset>
+        <legend>
+            Product Information
+        </legend>
+        <table>
+            <tr>
+                <td>ProductName:</td>
+                <td>${product.productName}</td>
+            </tr>
+            <tr>
+                <td>ProductPrice:</td>
+                <td>${product.productPrice}</td>
+            </tr>
+            <tr>
+                <td>ProductImg:</td>
+                <td>${product.productImg}</td>
+            </tr>
+            <tr>
+                <td><input type="submit" value="Delete product"></td>
+            </tr>
+        </table>
+    </fieldset>
 </form>
 </body>
 </html>

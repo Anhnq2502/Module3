@@ -11,20 +11,22 @@
           integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 </head>
 <style>
-    img{
+    img {
         width: 100px;
         height: 100px;
     }
-    table{
+
+    table {
         margin: 5%;
     }
-    .btn1{
+
+    .btn1 {
         background: linear-gradient(
-        to right,
-        red,
-        blue,
-        yellow);
-        );
+                to right,
+                red,
+                blue,
+                yellow);
+    );
     }
 </style>
 <body>
@@ -48,8 +50,12 @@
             <td>${product.productName}</td>
             <td>${product.productPrice}</td>
             <td><img src="${product.productImg}" alt=""></td>
-            <td><a href="/product?action=delete&productId=${product.productId}"><button class="btn1" type="submit">Delete</button></a></td>
-            <td><a href="/product?action=edit&productId=${product.productId}"><button class="btn1" type="submit">Edit</button></a></td>
+            <td><a href="/product?action=delete&productId=${product.productId -1}">
+                <button class="btn1" type="submit">Delete</button>
+            </a></td>
+            <td><a href="/product?action=edit&productId=${product.productId -1}">
+                <button class="btn1" type="submit">Edit</button>
+            </a></td>
         </tr>
     </c:forEach>
     </tbody>

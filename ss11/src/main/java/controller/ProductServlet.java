@@ -118,20 +118,14 @@ public class ProductServlet extends HttpServlet {
     }
 
 
-    private void createProduct(HttpServletRequest request, HttpServletResponse response) {
+    private void createProduct(HttpServletRequest request, HttpServletResponse response) throws IOException {
         int productId = Integer.parseInt(request.getParameter("productId"));
         String productName = request.getParameter("productName");
-        Double producPrice = Double.parseDouble(request.getParameter("productPrice"));
+        double productPrice = Double.parseDouble(request.getParameter("productPrice"));
         String productImg = request.getParameter("productImg");
-        Product product = new Product(productId, productName, producPrice, productImg);
+        Product product = new Product(productId, productName, productPrice, productImg);
         productService.save(product);
-        RequestDispatcher dispatcher = request.getRequestDispatcher("/create.jsp");
-        request.setAttribute("message", "New product was created");
-        try {
-            dispatcher.forward(request, response);
-        } catch (ServletException | IOException e) {
-            e.printStackTrace();
-        }
+        response.sendRedirect("/product");
     }
 
     private void updateProduct(HttpServletRequest request, HttpServletResponse response) {
@@ -142,7 +136,7 @@ public class ProductServlet extends HttpServlet {
         Product product = productService.findById(productId);
         RequestDispatcher dispatcher;
         if (product == null) {
-            dispatcher = request.getRequestDispatcher("error-404.jsp");
+            dispatcher = request.getRequestDispatcher("");
         } else {
             product.setProductId(productId);
             product.setProductName(productName);

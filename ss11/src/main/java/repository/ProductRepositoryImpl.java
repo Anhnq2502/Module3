@@ -24,7 +24,7 @@ public class ProductRepositoryImpl implements IProductRepository {
 
     @Override
     public void save(Product product) {
-        productList.add(product.getProductId(),product);
+        productList.add(product);
     }
 
     @Override
@@ -34,7 +34,7 @@ public class ProductRepositoryImpl implements IProductRepository {
 
     @Override
     public void update(int productId, Product product) {
-        productList.add(productId,product);
+        productList.add(productId, product);
     }
 
     @Override

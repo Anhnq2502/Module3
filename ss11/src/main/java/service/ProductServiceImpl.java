@@ -18,7 +18,7 @@ public class ProductServiceImpl implements IProductService {
 
     @Override
     public void save(Product product) {
-
+        repository.save(product);
     }
 
     @Override
@@ -28,7 +28,7 @@ public class ProductServiceImpl implements IProductService {
 
     @Override
     public void update(int productId, Product product) {
-        repository.update(productId,product);
+        repository.update(productId, product);
     }
 
     @Override
