@@ -36,6 +36,10 @@
         <td><input type="text" name="productPrice" id="Price"></td>
       </tr>
       <tr>
+        <td>Detail: </td>
+        <td><input type="text" name="productDetail" id="Detail"></td>
+      </tr>
+      <tr>
         <td>Image: </td>
         <td><input type="text" name="productImg" id="Image"></td>
       </tr>

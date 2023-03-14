@@ -22,6 +22,10 @@
         <td>${requestScope["product"].getProductPrice()}</td>
     </tr>
     <tr>
+        <td>Detail:</td>
+        <td>${requestScope["product"].getProductDetail()}</td>
+    </tr>
+    <tr>
         <td>Image:</td>
         <td>${requestScope["product"].getProductImg()}</td>
     </tr>

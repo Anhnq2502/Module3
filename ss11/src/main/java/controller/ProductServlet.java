@@ -111,6 +111,10 @@ public class ProductServlet extends HttpServlet {
                 break;
             case "view":
                 viewProduct(request, response);
+                break;
+            case "search":
+                searchProduct(request,response);
+                break;
             default:
                 listProduct(request, response);
                 break;
@@ -122,8 +126,9 @@ public class ProductServlet extends HttpServlet {
         int productId = Integer.parseInt(request.getParameter("productId"));
         String productName = request.getParameter("productName");
         double productPrice = Double.parseDouble(request.getParameter("productPrice"));
+        String productDetail = request.getParameter("productDetail");
         String productImg = request.getParameter("productImg");
-        Product product = new Product(productId, productName, productPrice, productImg);
+        Product product = new Product(productId, productName, productPrice,productDetail, productImg);
         productService.save(product);
         response.sendRedirect("/product");
     }
@@ -132,6 +137,7 @@ public class ProductServlet extends HttpServlet {
         int productId = Integer.parseInt(request.getParameter("productId"));
         String productName = request.getParameter("productName");
         Double productPrice = Double.parseDouble(request.getParameter("productPrice"));
+        String productDetail = request.getParameter("productDetail");
         String productImg = request.getParameter("productImg");
         Product product = productService.findById(productId);
         RequestDispatcher dispatcher;
@@ -141,8 +147,9 @@ public class ProductServlet extends HttpServlet {
             product.setProductId(productId);
             product.setProductName(productName);
             product.setProductPrice(productPrice);
+            product.setProductDetail(productDetail);
             product.setProductImg(productImg);
-            productService.update(productId, product);
+            productService.update(product);
             request.setAttribute("product", product);
             request.setAttribute("message", "Product information was updated");
             dispatcher = request.getRequestDispatcher("edit.jsp");
@@ -185,5 +192,13 @@ public class ProductServlet extends HttpServlet {
         } catch (ServletException | IOException e) {
             e.printStackTrace();
         }
+    }
+
+    private void searchProduct(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        String productName = request.getParameter("productName");
+        List<Product> productList1 = new ArrayList<>();
+        productList1.add(productService.findByName(productName));
+        request.setAttribute("productList", productList1);
+        request.getRequestDispatcher("/list.jsp").forward(request, response);
     }
 }

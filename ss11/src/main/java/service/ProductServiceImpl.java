@@ -27,9 +27,10 @@ public class ProductServiceImpl implements IProductService {
     }
 
     @Override
-    public void update(int productId, Product product) {
-        repository.update(productId, product);
+    public void update(Product product) {
+        repository.update(product);
     }
+
 
     @Override
     public void remove(int productId) {
@@ -38,7 +39,8 @@ public class ProductServiceImpl implements IProductService {
 
     @Override
     public Product findByName(String productName) {
-        return repository.findByName(productName);
+       return repository.findByName(productName);
     }
+
 }
 

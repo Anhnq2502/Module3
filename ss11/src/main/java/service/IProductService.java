@@ -10,7 +10,7 @@ public interface IProductService {
 
     void save(Product product);
     Product findById(int productId);
-    void update(int productId, Product product);
+    void update(Product product);
     void remove(int productId);
     Product findByName(String productName);
 }

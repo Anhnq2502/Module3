@@ -33,6 +33,10 @@
 <h1>Product List</h1>
 <p>
     <a href="/product?action=create">Create new product</a>
+<form action="/product?action=search" method="post">
+    <input type="text" name="productName">
+    <button type="submit">Search</button>
+</form>
 </p>
 <table class="table">
     <thread>
@@ -40,6 +44,7 @@
             <th>ID</th>
             <th>Name</th>
             <th>Price</th>
+            <th>Detail</th>
             <th>Image</th>
         </tr>
     </thread>
@@ -49,6 +54,7 @@
             <td>${product.productId}</td>
             <td>${product.productName}</td>
             <td>${product.productPrice}</td>
+            <td>${product.productDetail}</td>
             <td><img src="${product.productImg}" alt=""></td>
             <td><a href="/product?action=delete&productId=${product.productId -1}">
                 <button class="btn1" type="submit">Delete</button>
