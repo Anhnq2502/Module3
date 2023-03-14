@@ -37,6 +37,11 @@
                            value="${requestScope["product"].getProductDetail()}"></td>
             </tr>
             <tr>
+                <td>Producer:</td>
+                <td><input type="text" name="productProducer" id="Producer"
+                           value="${requestScope["product"].getProductProducer()}"></td>
+            </tr>
+            <tr>
                 <td>Image:</td>
                 <td><input type="text" name="productImg" id="Image" value="${requestScope["product"].getProductImg()}">
                 </td>

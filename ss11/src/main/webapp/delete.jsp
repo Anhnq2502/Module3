@@ -35,6 +35,10 @@
                 <td>${product.productDetail}</td>
             </tr>
             <tr>
+                <td>ProductProducer:</td>
+                <td>${product.productProducer}</td>
+            </tr>
+            <tr>
                 <td>ProductImg:</td>
                 <td>${product.productImg}</td>
             </tr>

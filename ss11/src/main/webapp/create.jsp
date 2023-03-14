@@ -39,6 +39,9 @@
         <td>Detail: </td>
         <td><input type="text" name="productDetail" id="Detail"></td>
       </tr>
+      <td>Producer: </td>
+      <td><input type="text" name="productProducer" id="Producer"></td>
+      </tr>
       <tr>
         <td>Image: </td>
         <td><input type="text" name="productImg" id="Image"></td>
