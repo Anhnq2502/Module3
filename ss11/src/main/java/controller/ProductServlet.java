@@ -127,8 +127,9 @@ public class ProductServlet extends HttpServlet {
         String productName = request.getParameter("productName");
         double productPrice = Double.parseDouble(request.getParameter("productPrice"));
         String productDetail = request.getParameter("productDetail");
+        String productProducer = request.getParameter("productProducer");
         String productImg = request.getParameter("productImg");
-        Product product = new Product(productId, productName, productPrice,productDetail, productImg);
+        Product product = new Product(productId, productName, productPrice,productDetail,productProducer, productImg);
         productService.save(product);
         response.sendRedirect("/product");
     }
@@ -138,6 +139,7 @@ public class ProductServlet extends HttpServlet {
         String productName = request.getParameter("productName");
         Double productPrice = Double.parseDouble(request.getParameter("productPrice"));
         String productDetail = request.getParameter("productDetail");
+        String productProducer = request.getParameter("productProducer");
         String productImg = request.getParameter("productImg");
         Product product = productService.findById(productId);
         RequestDispatcher dispatcher;
@@ -148,6 +150,7 @@ public class ProductServlet extends HttpServlet {
             product.setProductName(productName);
             product.setProductPrice(productPrice);
             product.setProductDetail(productDetail);
+            product.setProductProducer(productProducer);
             product.setProductImg(productImg);
             productService.update(product);
             request.setAttribute("product", product);
