@@ -15,17 +15,36 @@ public class UserRepositoryImpl implements IUserRepository {
 
     @Override
     public void insertUser(User user) throws SQLException {
-        try (Connection connection = DBConnection.getConnection();
-             PreparedStatement preparedStatement = connection.prepareStatement(INSERT_USERS_SQL)) {
+        Connection connection = DBConnection.getConnection();
+        Savepoint savepoint = null;
+        try {
+            connection.setAutoCommit(false);
+            PreparedStatement preparedStatement = connection.prepareStatement(INSERT_USERS_SQL);
             preparedStatement.setString(1, user.getName());
             preparedStatement.setString(2, user.getEmail());
             preparedStatement.setString(3, user.getCountry());
             System.out.println(preparedStatement);
             preparedStatement.executeUpdate();
+
+            savepoint = connection.setSavepoint();
+
+            PreparedStatement preparedStatement = connection.prepareStatement(INSERT_USERS_SQL);
+            preparedStatement.setString(1, user.getName());
+            preparedStatement.setString(2, user.getEmail());
+            preparedStatement.setString(3, user.getCountry());
+            System.out.println(preparedStatement);
+            preparedStatement.executeUpdate();
+
+            connection.commit();
         } catch (SQLException e) {
             e.printStackTrace();
+            if (savepoint != null){
+                connection.rollback(savepoint);
+                connection.commit();
+            }
+        }finally {
+            DBConnection.close();
         }
-
     }
 
     @Override
